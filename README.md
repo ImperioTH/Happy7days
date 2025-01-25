@@ -11,6 +11,7 @@
             padding: 0;
             background-color: #000;
             color: #fff;
+            box-sizing: border-box;
         }
         header {
             background-color: #222;
@@ -46,13 +47,13 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            gap: 20px;
         }
         .product {
             border: 1px solid #555;
-            margin: 10px;
             padding: 15px;
-            width: 100%; /* Tornando os produtos 100% do espaço disponível */
-            max-width: 300px; /* Limite de largura para desktop */
+            width: 100%; /* Ajusta para ocupar 100% em dispositivos pequenos */
+            max-width: 300px; /* Limite para desktop */
             border-radius: 10px;
             background-color: #111;
             box-sizing: border-box;
@@ -125,6 +126,7 @@
             }
             .product-container {
                 justify-content: space-evenly;
+                gap: 15px;
             }
             .product {
                 width: 100%; /* Garante que os produtos ocupem toda a largura disponível em telas menores */
