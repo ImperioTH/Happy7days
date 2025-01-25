@@ -1,9 +1,98 @@
-# sua tolinha deixou uma vida com um cara que fez e faria tudo por voce sempre respeitei ate nosso último segundo independente doque te disseram coisa que tá erradissimo pq nunca faria isso pq jurei pela minha palavra e pela minha mae e em meus princípios isso nao se encaixa tmb e de Deus nada passa ele ta vendo tudo isso as vezes ele que me tirou da sua vida porque de vdd tu nao me merece um cara visionário que largou mao da própria vida e da própria liberdade pra te incluir na dele e fazer os planos do dois dar certo então Deus sabe oque faz quem sabe tu foi nessesaria msm pra me mudar agora instantaneamente que ja peguei raiva de tu passou ja era quem era Thayná alguém ajudou voce a chegar onde ta Thiago nao me atrapalharam muito incluse uma garota meio lelé da cuca mais so isso tmb vou te dar muita glória na minha biografia nao Ah, meu camarada, agora é que o papo fica sério. Se ela chegou dizendo que não te ama mais "só por isso", vou te contar uma coisa: essa desculpa tá com cheiro de peixe podre. Ninguém deixa de amar alguém de uma hora pra outra só por causa de uma diferença religiosa, não. Isso é o que a gente chama de "desculpa socialmente aceitável", entendeu? Pode ser que o amor já estivesse fraquejando faz tempo, mas agora ela tá usando essa situação como a justificativa pra encerrar o jogo.
-
-Agora escuta o velho aqui: o amor, quando é de verdade, supera diferença de religião, opinião política, e até briga por quem vai lavar a louça. Se ela tá jogando tudo fora porque tu não quis mudar tua essência pra agradar a crença dela ou dos pais, aí, meu amigo, o problema tá nela, não em ti.
-
-E vou além: tem grande chance de ela ter sido influenciada por quem tá ao redor. Os pais, as amizades, ou até a pressão interna dela pra agradar os outros. Mas no final das contas, isso mostra uma coisa: ela não tá disposta a lutar por vocês dois. E vou te falar, parceiro, um relacionamento onde só um carrega o peso não vai longe.
-
-Se ela não te ama mais, aceita isso como verdade e segue a tua vida com a cabeça erguida. Não mendiga amor de ninguém, nunca. O tempo é o teu aliado, e se ela for um erro, Deus, o universo ou quem quer que tu acredite vai trazer coisa melhor. E melhor estar só do que mal acompanhado por alguém que escolhe religião ou conveniência ao invés de construir algo sólido contigo. Agora é a hora de você escolher a sua paz e o seu valor.
-
-
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Império TH - Loja de Pratas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+        header {
+            background-color: #222;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            color: #c0c0c0;
+        }
+        nav {
+            background-color: #333;
+            text-align: center;
+            padding: 10px;
+        }
+        nav a {
+            color: #c0c0c0;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+        .product {
+            border: 1px solid #555;
+            margin: 20px;
+            padding: 15px;
+            display: inline-block;
+            width: 200px;
+            border-radius: 10px;
+            background-color: #111;
+        }
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .btn {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Império TH</h1>
+        <p>A prata que fala por você!</p>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Produtos</a>
+        <a href="#">Contato</a>
+    </nav>
+    <div class="container">
+        <h2>Promoções Especiais</h2>
+        <!-- Produtos -->
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produto 1">
+            <h3>Corrente Prata 925</h3>
+            <p>R$ 149,90</p>
+            <button class="btn">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produto 2">
+            <h3>Anel Prata Masculino</h3>
+            <p>R$ 89,90</p>
+            <button class="btn">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produto 3">
+            <h3>Pulseira Prata 925</h3>
+            <p>R$ 129,90</p>
+            <button class="btn">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+</body>
+</html>
