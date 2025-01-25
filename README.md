@@ -20,6 +20,12 @@
         header h1 {
             color: #c0c0c0;
             font-size: 2rem;
+            margin: 0;
+        }
+        header p {
+            text-align: center;
+            margin: 0;
+            padding: 5px;
         }
         nav {
             background-color: #333;
