@@ -18,8 +18,11 @@
             text-align: center;
         }
         header h1 {
-            color: #c0c0c0;
-            font-size: 2rem;
+    color: #c0c0c0;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0; /* Remove qualquer margem extra */
+}
         }
         nav {
             background-color: #333;
