@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -79,20 +79,42 @@
             <img src="https://via.placeholder.com/200" alt="Produto 1">
             <h3>Corrente Prata 925</h3>
             <p>R$ 149,90</p>
-            <button class="btn">Adicionar ao Carrinho</button>
+            <button class="btn" onclick="adicionarAoCarrinho('Corrente Prata 925', 149.90)">Adicionar ao Carrinho</button>
         </div>
         <div class="product">
             <img src="https://via.placeholder.com/200" alt="Produto 2">
             <h3>Anel Prata Masculino</h3>
             <p>R$ 89,90</p>
-            <button class="btn">Adicionar ao Carrinho</button>
+            <button class="btn" onclick="adicionarAoCarrinho('Anel Prata Masculino', 89.90)">Adicionar ao Carrinho</button>
         </div>
         <div class="product">
             <img src="https://via.placeholder.com/200" alt="Produto 3">
             <h3>Pulseira Prata 925</h3>
             <p>R$ 129,90</p>
-            <button class="btn">Adicionar ao Carrinho</button>
+            <button class="btn" onclick="adicionarAoCarrinho('Pulseira Prata 925', 129.90)">Adicionar ao Carrinho</button>
         </div>
     </div>
+
+    <!-- Script para o Carrinho -->
+    <script>
+        // Array para armazenar os itens do carrinho
+        let carrinho = [];
+
+        // Função para adicionar itens ao carrinho
+        function adicionarAoCarrinho(nome, preco) {
+            // Cria um objeto do produto
+            const produto = {
+                nome: nome,
+                preco: preco
+            };
+            
+            // Adiciona ao carrinho
+            carrinho.push(produto);
+            alert(`${nome} foi adicionado ao carrinho!`);
+            
+            // Atualiza o carrinho no console (para testes)
+            console.log(carrinho);
+        }
+    </script>
 </body>
 </html>
