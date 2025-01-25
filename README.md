@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -60,6 +60,35 @@
         .btn:hover {
             background-color: #777;
         }
+        #carrinho-container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 10px;
+            text-align: left;
+        }
+        #carrinho-container ul {
+            list-style: none;
+            padding: 0;
+        }
+        #carrinho-container li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #111;
+            border-radius: 5px;
+        }
+        .btn-finalizar, .btn-limpar {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #c00;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn-finalizar:hover, .btn-limpar:hover {
+            background-color: #f33;
+        }
     </style>
 </head>
 <body>
@@ -95,25 +124,46 @@
         </div>
     </div>
 
-    <!-- Script para o Carrinho -->
+    <!-- Carrinho -->
+    <div id="carrinho-container" class="container">
+        <h2>Seu Carrinho</h2>
+        <ul id="carrinho-itens"></ul>
+        <button class="btn-finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
+        <button class="btn-limpar" onclick="limparCarrinho()">Limpar Carrinho</button>
+    </div>
+
+    <!-- Script do Carrinho -->
     <script>
-        // Array para armazenar os itens do carrinho
         let carrinho = [];
 
-        // Função para adicionar itens ao carrinho
         function adicionarAoCarrinho(nome, preco) {
-            // Cria um objeto do produto
-            const produto = {
-                nome: nome,
-                preco: preco
-            };
-            
-            // Adiciona ao carrinho
+            const produto = { nome, preco };
             carrinho.push(produto);
+            atualizarCarrinho();
             alert(`${nome} foi adicionado ao carrinho!`);
-            
-            // Atualiza o carrinho no console (para testes)
-            console.log(carrinho);
+        }
+
+        function atualizarCarrinho() {
+            const carrinhoItens = document.getElementById('carrinho-itens');
+            carrinhoItens.innerHTML = '';
+            carrinho.forEach((produto, index) => {
+                carrinhoItens.innerHTML += `<li>${produto.nome} - R$ ${produto.preco.toFixed(2)}</li>`;
+            });
+        }
+
+        function finalizarCompra() {
+            if (carrinho.length > 0) {
+                alert('Compra finalizada com sucesso!');
+                carrinho = [];
+                atualizarCarrinho();
+            } else {
+                alert('Seu carrinho está vazio!');
+            }
+        }
+
+        function limparCarrinho() {
+            carrinho = [];
+            atualizarCarrinho();
         }
     </script>
 </body>
