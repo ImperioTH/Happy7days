@@ -19,6 +19,7 @@
         }
         header h1 {
             color: #c0c0c0;
+            font-size: 2rem;
         }
         nav {
             background-color: #333;
@@ -40,7 +41,8 @@
             margin: 20px;
             padding: 15px;
             display: inline-block;
-            width: 200px;
+            width: calc(100% - 40px); /* Para celular */
+            max-width: 200px; /* Para PC */
             border-radius: 10px;
             background-color: #111;
         }
@@ -89,6 +91,29 @@
         .btn-finalizar:hover, .btn-limpar:hover {
             background-color: #f33;
         }
+        #total-carrinho {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Responsivo: Para telas menores (celulares) */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            nav a {
+                display: block;
+                margin: 10px 0;
+                font-size: 1rem;
+            }
+            .container {
+                padding: 10px;
+            }
+            .product {
+                width: 100%;
+                max-width: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -128,6 +153,7 @@
     <div id="carrinho-container" class="container">
         <h2>Seu Carrinho</h2>
         <ul id="carrinho-itens"></ul>
+        <p id="total-carrinho">Total: R$ 0,00</p>
         <button class="btn-finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
         <button class="btn-limpar" onclick="limparCarrinho()">Limpar Carrinho</button>
     </div>
@@ -145,10 +171,22 @@
 
         function atualizarCarrinho() {
             const carrinhoItens = document.getElementById('carrinho-itens');
+            const totalCarrinho = document.getElementById('total-carrinho');
             carrinhoItens.innerHTML = '';
+            let total = 0;
+
             carrinho.forEach((produto, index) => {
-                carrinhoItens.innerHTML += `<li>${produto.nome} - R$ ${produto.preco.toFixed(2)}</li>`;
+                carrinhoItens.innerHTML += `<li>${produto.nome} - R$ ${produto.preco.toFixed(2)} 
+                <button onclick="removerDoCarrinho(${index})" style="margin-left: 10px; color: red;">Remover</button></li>`;
+                total += produto.preco;
             });
+
+            totalCarrinho.innerText = `Total: R$ ${total.toFixed(2)}`;
+        }
+
+        function removerDoCarrinho(index) {
+            carrinho.splice(index, 1); // Remove o item pelo índice
+            atualizarCarrinho();
         }
 
         function finalizarCompra() {
