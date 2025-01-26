@@ -1,87 +1,233 @@
-<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Império TH  Loja de Pratas</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        /* Adicionar customizações adicionais de estilo aqui, se necessário */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: Arial, sans-serif;
             background-color: #000;
             color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
         }
-        /* Adicionando um toque mais limpo e profissional */
-        .header-bg {
-            background-color: #111;
-        }
-        .footer-bg {
+        header {
             background-color: #222;
+            padding: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        header h1 {
+            color: #c0c0c0;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        header p {
+            color: #aaa;
+            font-size: 1.2rem;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        nav a {
+            color: #c0c0c0;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        .container {
+            padding: 20px;
+            width: 100%;
+            max-width: 1200px;
         }
         .product {
+            border: 1px solid #555;
+            margin: 20px auto;
+            padding: 15px;
             border-radius: 10px;
             background-color: #111;
+            max-width: 300px;
+        }
+        .product img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 10px;
         }
         .btn {
-            background-color: #333;
-            color: white;
-            border-radius: 8px;
+            margin-top: 10px;
             padding: 10px;
-            transition: 0.3s;
+            background-color: #555;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
         }
         .btn:hover {
-            background-color: #555;
+            background-color: #777;
+        }
+        #carrinho-container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 10px;
+            max-width: 300px;
+            margin: 30px auto;
+        }
+        #carrinho-container ul {
+            list-style: none;
+            padding: 0;
+        }
+        #carrinho-container li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #111;
+            border-radius: 5px;
+        }
+        .btn-finalizar, .btn-limpar {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #c00;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn-finalizar:hover, .btn-limpar:hover {
+            background-color: #f33;
+        }
+        #total-carrinho {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+        footer {
+            background-color: #222;
+            padding: 10px;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        footer p {
+            color: #aaa;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
-
-    <!-- Header -->
-    <header class="header-bg text-center py-6">
-        <h1 class="text-4xl text-gray-200">Bem-vindo ao Império TH</h1>
-        <p class="text-xl text-gray-400">O IMPÉRIO DAS PRATAS!</p>
+    <header>
+        <h1>Bem-vindo ao Império TH</h1>
+        <p>A prata que fala por você!</p>
     </header>
-
-    <!-- Navbar -->
-    <nav class="bg-gray-900 text-white py-4">
-        <div class="container mx-auto flex justify-center">
-            <a href="#" class="px-6">Home</a>
-            <a href="#" class="px-6">Produtos</a>
-            <a href="#" class="px-6">Contato</a>
-        </div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Produtos</a>
+        <a href="#">Contato</a>
     </nav>
+    <div class="container">
+        <h2>Promoções Especiais</h2>
+        <!-- Produtos -->
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produto 1">
+            <h3>Corrente Prata 925</h3>
+            <p>R$ 149,90</p>
+            <button class="btn" onclick="adicionarAoCarrinho('Corrente Prata 925', 149.90)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produto 2">
+            <h3>Anel Prata Masculino</h3>
+            <p>R$ 89,90</p>
+            <button class="btn" onclick="adicionarAoCarrinho('Anel Prata Masculino', 89.90)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produto 3">
+            <h3>Pulseira Prata 925</h3>
+            <p>R$ 129,90</p>
+            <button class="btn" onclick="adicionarAoCarrinho('Pulseira Prata 925', 129.90)">Adicionar ao Carrinho</button>
+        </div>
 
-    <!-- Container de Produtos -->
-    <div class="container mx-auto px-4 py-8">
-        <h2 class="text-3xl text-center mb-8">Promoções Especiais</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="product p-6 rounded-lg shadow-lg bg-gray-800">
-                <img src="https://via.placeholder.com/200" alt="Produto 1" class="rounded-lg w-full mb-4">
-                <h3 class="text-2xl text-white">Corrente Prata 925</h3>
-                <p class="text-xl text-gray-400">R$ 149,90</p>
-                <button class="btn w-full mt-4" onclick="adicionarAoCarrinho('Corrente Prata 925', 149.90)">Adicionar ao Carrinho</button>
-            </div>
-            <!-- Outros Produtos -->
+        <!-- Produtos de Fantasia -->
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produto 4">
+            <h3>Máscara Fantasia Prata</h3>
+            <p>R$ 199,90</p>
+            <button class="btn" onclick="adicionarAoCarrinho('Máscara Fantasia Prata', 199.90)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produto 5">
+            <h3>Coroa de Prata para Fantasia</h3>
+            <p>R$ 299,90</p>
+            <button class="btn" onclick="adicionarAoCarrinho('Coroa de Prata para Fantasia', 299.90)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produto 6">
+            <h3>Bracelete Fantasia de Prata</h3>
+            <p>R$ 109,90</p>
+            <button class="btn" onclick="adicionarAoCarrinho('Bracelete Fantasia de Prata', 109.90)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produto 7">
+            <h3>Máscara de Carnaval em Prata</h3>
+            <p>R$ 249,90</p>
+            <button class="btn" onclick="adicionarAoCarrinho('Máscara de Carnaval em Prata', 249.90)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produto 8">
+            <h3>Cinto Prata para Fantasia</h3>
+            <p>R$ 179,90</p>
+            <button class="btn" onclick="adicionarAoCarrinho('Cinto Prata para Fantasia', 179.90)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produto 9">
+            <h3>Tiara Prata para Fantasia</h3>
+            <p>R$ 99,90</p>
+            <button class="btn" onclick="adicionarAoCarrinho('Tiara Prata para Fantasia', 99.90)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produto 10">
+            <h3>Colar Prata Fantasia</h3>
+            <p>R$ 159,90</p>
+            <button class="btn" onclick="adicionarAoCarrinho('Colar Prata Fantasia', 159.90)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produto 11">
+            <h3>Brinco Prata para Fantasia</h3>
+            <p>R$ 79,90</p>
+            <button class="btn" onclick="adicionarAoCarrinho('Brinco Prata para Fantasia', 79.90)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produto 12">
+            <h3>Anel Prata para Fantasia</h3>
+            <p>R$ 119,90</p>
+            <button class="btn" onclick="adicionarAoCarrinho('Anel Prata para Fantasia', 119.90)">Adicionar ao Carrinho</button>
         </div>
     </div>
 
     <!-- Carrinho -->
-    <div id="carrinho-container" class="container mx-auto px-4 py-8">
-        <h2 class="text-2xl text-center mb-4">Seu Carrinho</h2>
-        <ul id="carrinho-itens" class="list-none mb-4">
-            <!-- Itens do carrinho serão adicionados aqui -->
-        </ul>
-        <p id="total-carrinho" class="text-xl">Total: R$ 0,00</p>
-        <button class="btn w-full mt-4" onclick="finalizarCompra()">Finalizar Compra</button>
+    <div id="carrinho-container" class="container">
+        <h2>Seu Carrinho</h2>
+        <ul id="carrinho-itens"></ul>
+        <p id="total-carrinho">Total: R$ 0,00</p>
+        <button class="btn-finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
+        <button class="btn-limpar" onclick="limparCarrinho()">Limpar Carrinho</button>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer-bg text-center py-4 mt-8">
-        <p class="text-gray-400">Império TH &copy; 2025 - Todos os direitos reservados.</p>
+    <footer>
+        <p>Império TH &copy; 2025 - Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Script -->
+    <!-- Script do Carrinho -->
     <script>
         let carrinho = [];
 
@@ -89,6 +235,7 @@
             const produto = { nome, preco };
             carrinho.push(produto);
             atualizarCarrinho();
+            alert(`${nome} foi adicionado ao carrinho!`);
         }
 
         function atualizarCarrinho() {
@@ -98,8 +245,8 @@
             let total = 0;
 
             carrinho.forEach((produto, index) => {
-                carrinhoItens.innerHTML += `<li class="bg-gray-700 p-4 mb-2 text-white flex justify-between items-center">${produto.nome} - R$ ${produto.preco.toFixed(2)} 
-                <button onclick="removerDoCarrinho(${index})" class="text-red-500 ml-4">Remover</button></li>`;
+                carrinhoItens.innerHTML += `<li>${produto.nome} - R$ ${produto.preco.toFixed(2)} 
+                <button onclick="removerDoCarrinho(${index})" style="margin-left: 10px; color: red;">Remover</button></li>`;
                 total += produto.preco;
             });
 
@@ -120,7 +267,11 @@
                 alert('Seu carrinho está vazio!');
             }
         }
-    </script>
 
+        function limparCarrinho() {
+            carrinho = [];
+            atualizarCarrinho();
+        }
+    </script>
 </body>
 </html>
