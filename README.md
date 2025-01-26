@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -41,30 +41,28 @@
         }
         .container {
             padding: 20px;
-            text-align: center;
         }
         .product-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-evenly;
-            gap: 20px;
-            margin-bottom: 30px;
+            justify-content: center; /* Centraliza os produtos */
+            gap: 20px; /* Espaço entre os produtos */
         }
         .product {
             border: 1px solid #555;
             padding: 15px;
-            width: 100%; /* Ocupa 100% da tela em dispositivos pequenos */
-            max-width: 300px; /* Limite de largura para desktop */
+            flex: 1 1 calc(300px - 20px); /* Largura proporcional */
+            max-width: 300px; /* Limite máximo de largura */
             border-radius: 10px;
             background-color: #111;
-            box-sizing: border-box;
+            text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
         .product img {
             width: 100%;
-            max-width: 250px; /* Tamanho fixo para as imagens */
+            max-width: 250px; /* Tamanho máximo das imagens */
             height: auto;
             border-radius: 10px;
         }
@@ -131,7 +129,7 @@
                 gap: 15px;
             }
             .product {
-                width: 100%;
+                width: 100%; /* Ocupa 100% em telas menores */
                 max-width: 90%;
             }
         }
