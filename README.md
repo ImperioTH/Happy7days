@@ -14,7 +14,7 @@
             font-family: Arial, sans-serif;
             background-color: #000;
             color: #fff;
-            text-align: center; /* Centraliza todo o conteúdo na horizontal */
+            text-align: center; /* Centraliza todo o texto */
         }
         header {
             background-color: #222;
@@ -22,12 +22,12 @@
         }
         header h1 {
             color: #c0c0c0;
-            font-size: 2rem;
+            font-size: 2.5rem; /* Aumentei o tamanho para destacar mais */
             margin-bottom: 10px;
         }
         header p {
             color: #aaa;
-            font-size: 1rem;
+            font-size: 1.2rem; /* Subtítulo com tamanho maior */
         }
         nav {
             background-color: #333;
@@ -44,11 +44,11 @@
         }
         .product {
             border: 1px solid #555;
-            margin: 20px auto; /* Centraliza os produtos e dá espaço entre eles */
+            margin: 20px auto; /* Centraliza os produtos */
             padding: 15px;
             border-radius: 10px;
             background-color: #111;
-            max-width: 300px; /* Limita a largura do produto */
+            max-width: 300px; /* Limita a largura */
         }
         .product img {
             width: 100%; /* Imagem ocupa toda a largura disponível */
@@ -102,6 +102,15 @@
             margin-top: 10px;
             font-size: 1.2rem;
         }
+        footer {
+            background-color: #222;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        footer p {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
@@ -145,6 +154,10 @@
         <button class="btn-finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
         <button class="btn-limpar" onclick="limparCarrinho()">Limpar Carrinho</button>
     </div>
+
+    <footer>
+        <p>Império TH &copy; 2025 - Todos os direitos reservados.</p>
+    </footer>
 
     <!-- Script do Carrinho -->
     <script>
