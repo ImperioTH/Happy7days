@@ -127,8 +127,8 @@
 </head>
 <body>
     <header>
-        <h1>Bem-vindo ao Império TH</h1>
-        <p>A prata que fala por você!</p>
+        <h1>Bem-vindo ao ImpérioTH</h1>
+        <p>O IMPÉRIO DAS PRATAS!</p>
     </header>
     <nav>
         <a href="#">ImpérioTH</a> <!-- Alterado o texto do link aqui -->
