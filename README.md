@@ -16,7 +16,7 @@
             color: #fff;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start; /* Ajusta para começar do topo */
             align-items: center; /* Centraliza todo o conteúdo */
             height: 100vh;
             text-align: center;
