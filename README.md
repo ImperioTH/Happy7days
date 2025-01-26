@@ -14,16 +14,16 @@
             font-family: Arial, sans-serif;
             background-color: #000;
             color: #fff;
-            overflow-x: hidden; /* Bloqueia rolagem horizontal */
+            text-align: center; /* Centraliza todo o conteúdo na horizontal */
         }
         header {
             background-color: #222;
             padding: 20px;
-            text-align: center;
         }
         header h1 {
             color: #c0c0c0;
             font-size: 2rem;
+            margin-bottom: 10px;
         }
         header p {
             color: #aaa;
@@ -31,7 +31,6 @@
         }
         nav {
             background-color: #333;
-            text-align: center;
             padding: 10px;
         }
         nav a {
@@ -43,24 +42,17 @@
         .container {
             padding: 20px;
         }
-        .product-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center; /* Centraliza os produtos */
-            gap: 20px; /* Espaço entre os produtos */
-        }
         .product {
             border: 1px solid #555;
+            margin: 20px auto; /* Centraliza os produtos e dá espaço entre eles */
             padding: 15px;
             border-radius: 10px;
             background-color: #111;
-            text-align: center;
-            flex: 1 1 calc(100% - 40px); /* Ocupe 100% da largura disponível em telas pequenas */
-            max-width: 300px; /* Limite máximo para telas grandes */
+            max-width: 300px; /* Limita a largura do produto */
         }
         .product img {
-            width: 100%;
-            max-width: 250px; /* Limita o tamanho das imagens */
+            width: 100%; /* Imagem ocupa toda a largura disponível */
+            max-width: 250px; /* Limita o tamanho da imagem */
             height: auto;
             border-radius: 10px;
         }
@@ -81,9 +73,8 @@
             padding: 20px;
             background-color: #222;
             border-radius: 10px;
-            text-align: left;
-            max-width: 600px;
-            margin: 0 auto;
+            max-width: 300px;
+            margin: 30px auto; /* Centraliza o carrinho */
         }
         #carrinho-container ul {
             list-style: none;
@@ -111,26 +102,6 @@
             margin-top: 10px;
             font-size: 1.2rem;
         }
-
-        /* Responsivo: Para telas menores (celulares) */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.5rem;
-            }
-            nav a {
-                display: block;
-                margin: 10px 0;
-                font-size: 1rem;
-            }
-            .product-container {
-                justify-content: center;
-                gap: 15px;
-            }
-            .product {
-                width: 100%; /* Ocupa 100% em telas menores */
-                max-width: 90%;
-            }
-        }
     </style>
 </head>
 <body>
@@ -146,25 +117,23 @@
     <div class="container">
         <h2>Promoções Especiais</h2>
         <!-- Produtos -->
-        <div class="product-container">
-            <div class="product">
-                <img src="https://via.placeholder.com/200" alt="Produto 1">
-                <h3>Corrente Prata 925</h3>
-                <p>R$ 149,90</p>
-                <button class="btn" onclick="adicionarAoCarrinho('Corrente Prata 925', 149.90)">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/200" alt="Produto 2">
-                <h3>Anel Prata Masculino</h3>
-                <p>R$ 89,90</p>
-                <button class="btn" onclick="adicionarAoCarrinho('Anel Prata Masculino', 89.90)">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/200" alt="Produto 3">
-                <h3>Pulseira Prata 925</h3>
-                <p>R$ 129,90</p>
-                <button class="btn" onclick="adicionarAoCarrinho('Pulseira Prata 925', 129.90)">Adicionar ao Carrinho</button>
-            </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produto 1">
+            <h3>Corrente Prata 925</h3>
+            <p>R$ 149,90</p>
+            <button class="btn" onclick="adicionarAoCarrinho('Corrente Prata 925', 149.90)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produto 2">
+            <h3>Anel Prata Masculino</h3>
+            <p>R$ 89,90</p>
+            <button class="btn" onclick="adicionarAoCarrinho('Anel Prata Masculino', 89.90)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produto 3">
+            <h3>Pulseira Prata 925</h3>
+            <p>R$ 129,90</p>
+            <button class="btn" onclick="adicionarAoCarrinho('Pulseira Prata 925', 129.90)">Adicionar ao Carrinho</button>
         </div>
     </div>
 
