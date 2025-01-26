@@ -5,32 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Império TH - Loja de Pratas</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box; /* Garante que padding e bordas não quebrem o layout */
-        }
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
             background-color: #000;
             color: #fff;
-            text-align: center; /* Centraliza todo o texto */
+            box-sizing: border-box;
         }
         header {
             background-color: #222;
             padding: 20px;
+            text-align: center;
         }
         header h1 {
             color: #c0c0c0;
-            font-size: 2.5rem; /* Aumentei o tamanho para destacar mais */
-            margin-bottom: 10px;
+            font-size: 2rem;
+            margin: 0;
         }
         header p {
-            color: #aaa;
-            font-size: 1.2rem; /* Subtítulo com tamanho maior */
+            text-align: center;
+            margin: 0;
+            padding: 5px;
         }
         nav {
             background-color: #333;
+            text-align: center;
             padding: 10px;
         }
         nav a {
@@ -41,18 +41,28 @@
         }
         .container {
             padding: 20px;
+            text-align: center;
+        }
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
         }
         .product {
             border: 1px solid #555;
-            margin: 20px auto; /* Centraliza os produtos */
             padding: 15px;
+            width: 100%;
             border-radius: 10px;
             background-color: #111;
-            max-width: 300px; /* Limita a largura */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .product img {
-            width: 100%; /* Imagem ocupa toda a largura disponível */
-            max-width: 250px; /* Limita o tamanho da imagem */
+            width: 100%;
+            max-width: 250px; 
             height: auto;
             border-radius: 10px;
         }
@@ -73,8 +83,9 @@
             padding: 20px;
             background-color: #222;
             border-radius: 10px;
-            max-width: 300px;
-            margin: 30px auto; /* Centraliza o carrinho */
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
         }
         #carrinho-container ul {
             list-style: none;
@@ -102,15 +113,6 @@
             margin-top: 10px;
             font-size: 1.2rem;
         }
-        footer {
-            background-color: #222;
-            padding: 10px;
-            margin-top: 20px;
-        }
-        footer p {
-            color: #aaa;
-            font-size: 0.9rem;
-        }
     </style>
 </head>
 <body>
@@ -125,28 +127,28 @@
     </nav>
     <div class="container">
         <h2>Promoções Especiais</h2>
-        <!-- Produtos -->
-        <div class="product">
-            <img src="https://via.placeholder.com/200" alt="Produto 1">
-            <h3>Corrente Prata 925</h3>
-            <p>R$ 149,90</p>
-            <button class="btn" onclick="adicionarAoCarrinho('Corrente Prata 925', 149.90)">Adicionar ao Carrinho</button>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/200" alt="Produto 2">
-            <h3>Anel Prata Masculino</h3>
-            <p>R$ 89,90</p>
-            <button class="btn" onclick="adicionarAoCarrinho('Anel Prata Masculino', 89.90)">Adicionar ao Carrinho</button>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/200" alt="Produto 3">
-            <h3>Pulseira Prata 925</h3>
-            <p>R$ 129,90</p>
-            <button class="btn" onclick="adicionarAoCarrinho('Pulseira Prata 925', 129.90)">Adicionar ao Carrinho</button>
+        <div class="product-container">
+            <div class="product">
+                <img src="https://via.placeholder.com/200" alt="Produto 1">
+                <h3>Corrente Prata 925</h3>
+                <p>R$ 149,90</p>
+                <button class="btn" onclick="adicionarAoCarrinho('Corrente Prata 925', 149.90)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/200" alt="Produto 2">
+                <h3>Anel Prata Masculino</h3>
+                <p>R$ 89,90</p>
+                <button class="btn" onclick="adicionarAoCarrinho('Anel Prata Masculino', 89.90)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/200" alt="Produto 3">
+                <h3>Pulseira Prata 925</h3>
+                <p>R$ 129,90</p>
+                <button class="btn" onclick="adicionarAoCarrinho('Pulseira Prata 925', 129.90)">Adicionar ao Carrinho</button>
+            </div>
         </div>
     </div>
 
-    <!-- Carrinho -->
     <div id="carrinho-container" class="container">
         <h2>Seu Carrinho</h2>
         <ul id="carrinho-itens"></ul>
@@ -155,11 +157,6 @@
         <button class="btn-limpar" onclick="limparCarrinho()">Limpar Carrinho</button>
     </div>
 
-    <footer>
-        <p>Império TH &copy; 2025 - Todos os direitos reservados.</p>
-    </footer>
-
-    <!-- Script do Carrinho -->
     <script>
         let carrinho = [];
 
