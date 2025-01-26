@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Império TH  Loja de Pratas</title>
+    <title>Império TH - Loja de Pratas</title>
     <style>
         * {
             margin: 0;
@@ -131,6 +131,7 @@
         <p>A prata que fala por você!</p>
     </header>
     <nav>
+        <a href="#">ImpérioTH</a> <!-- Alterado o texto do link aqui -->
         <a href="#">Home</a>
         <a href="#">Produtos</a>
         <a href="#">Contato</a>
@@ -155,62 +156,6 @@
             <h3>Pulseira Prata 925</h3>
             <p>R$ 129,90</p>
             <button class="btn" onclick="adicionarAoCarrinho('Pulseira Prata 925', 129.90)">Adicionar ao Carrinho</button>
-        </div>
-
-        <!-- Produtos de Fantasia -->
-        <div class="product">
-            <img src="https://via.placeholder.com/200" alt="Produto 4">
-            <h3>Máscara Fantasia Prata</h3>
-            <p>R$ 199,90</p>
-            <button class="btn" onclick="adicionarAoCarrinho('Máscara Fantasia Prata', 199.90)">Adicionar ao Carrinho</button>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/200" alt="Produto 5">
-            <h3>Coroa de Prata para Fantasia</h3>
-            <p>R$ 299,90</p>
-            <button class="btn" onclick="adicionarAoCarrinho('Coroa de Prata para Fantasia', 299.90)">Adicionar ao Carrinho</button>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/200" alt="Produto 6">
-            <h3>Bracelete Fantasia de Prata</h3>
-            <p>R$ 109,90</p>
-            <button class="btn" onclick="adicionarAoCarrinho('Bracelete Fantasia de Prata', 109.90)">Adicionar ao Carrinho</button>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/200" alt="Produto 7">
-            <h3>Máscara de Carnaval em Prata</h3>
-            <p>R$ 249,90</p>
-            <button class="btn" onclick="adicionarAoCarrinho('Máscara de Carnaval em Prata', 249.90)">Adicionar ao Carrinho</button>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/200" alt="Produto 8">
-            <h3>Cinto Prata para Fantasia</h3>
-            <p>R$ 179,90</p>
-            <button class="btn" onclick="adicionarAoCarrinho('Cinto Prata para Fantasia', 179.90)">Adicionar ao Carrinho</button>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/200" alt="Produto 9">
-            <h3>Tiara Prata para Fantasia</h3>
-            <p>R$ 99,90</p>
-            <button class="btn" onclick="adicionarAoCarrinho('Tiara Prata para Fantasia', 99.90)">Adicionar ao Carrinho</button>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/200" alt="Produto 10">
-            <h3>Colar Prata Fantasia</h3>
-            <p>R$ 159,90</p>
-            <button class="btn" onclick="adicionarAoCarrinho('Colar Prata Fantasia', 159.90)">Adicionar ao Carrinho</button>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/200" alt="Produto 11">
-            <h3>Brinco Prata para Fantasia</h3>
-            <p>R$ 79,90</p>
-            <button class="btn" onclick="adicionarAoCarrinho('Brinco Prata para Fantasia', 79.90)">Adicionar ao Carrinho</button>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/200" alt="Produto 12">
-            <h3>Anel Prata para Fantasia</h3>
-            <p>R$ 119,90</p>
-            <button class="btn" onclick="adicionarAoCarrinho('Anel Prata para Fantasia', 119.90)">Adicionar ao Carrinho</button>
         </div>
     </div>
 
@@ -254,7 +199,7 @@
         }
 
         function removerDoCarrinho(index) {
-            carrinho.splice(index, 1);
+            carrinho.splice(index, 1); // Remove o item pelo índice
             atualizarCarrinho();
         }
 
