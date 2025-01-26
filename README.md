@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Império TH - Loja de Pratas</title>
+    <title>Império TH  Loja de Pratas</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         /* Adicionar customizações adicionais de estilo aqui, se necessário */
@@ -40,7 +40,7 @@
     <!-- Header -->
     <header class="header-bg text-center py-6">
         <h1 class="text-4xl text-gray-200">Bem-vindo ao Império TH</h1>
-        <p class="text-xl text-gray-400">A prata que fala por você!</p>
+        <p class="text-xl text-gray-400">O IMPÉRIO DAS PRATAS!</p>
     </header>
 
     <!-- Navbar -->
