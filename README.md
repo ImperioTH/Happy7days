@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Império TH - Loja de Pratas</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box; /* Garante que padding e bordas não quebrem o layout */
+        }
+        body {
+            font-family: Arial, sans-serif;
             background-color: #000;
             color: #fff;
-            box-sizing: border-box;
+            overflow-x: hidden; /* Bloqueia rolagem horizontal */
         }
         header {
             background-color: #222;
@@ -21,12 +24,10 @@
         header h1 {
             color: #c0c0c0;
             font-size: 2rem;
-            margin: 0;
         }
         header p {
-            text-align: center;
-            margin: 0;
-            padding: 5px;
+            color: #aaa;
+            font-size: 1rem;
         }
         nav {
             background-color: #333;
@@ -51,18 +52,15 @@
         .product {
             border: 1px solid #555;
             padding: 15px;
-            flex: 1 1 calc(300px - 20px); /* Largura proporcional */
-            max-width: 300px; /* Limite máximo de largura */
             border-radius: 10px;
             background-color: #111;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex: 1 1 calc(100% - 40px); /* Ocupe 100% da largura disponível em telas pequenas */
+            max-width: 300px; /* Limite máximo para telas grandes */
         }
         .product img {
             width: 100%;
-            max-width: 250px; /* Tamanho máximo das imagens */
+            max-width: 250px; /* Limita o tamanho das imagens */
             height: auto;
             border-radius: 10px;
         }
