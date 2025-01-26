@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -14,33 +14,24 @@
             font-family: Arial, sans-serif;
             background-color: #000;
             color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start; /* Ajusta para começar do topo */
-            align-items: center; /* Centraliza todo o conteúdo */
-            height: 100vh;
-            text-align: center;
+            text-align: center; /* Centraliza todo o texto */
         }
         header {
             background-color: #222;
             padding: 20px;
-            width: 100%;
-            max-width: 1200px; /* Limita a largura máxima */
         }
         header h1 {
             color: #c0c0c0;
-            font-size: 2.5rem;
+            font-size: 2.5rem; /* Aumentei o tamanho para destacar mais */
             margin-bottom: 10px;
         }
         header p {
             color: #aaa;
-            font-size: 1.2rem;
+            font-size: 1.2rem; /* Subtítulo com tamanho maior */
         }
         nav {
             background-color: #333;
             padding: 10px;
-            width: 100%;
-            max-width: 1200px;
         }
         nav a {
             color: #c0c0c0;
@@ -50,20 +41,18 @@
         }
         .container {
             padding: 20px;
-            width: 100%;
-            max-width: 1200px; /* Limita a largura */
         }
         .product {
             border: 1px solid #555;
-            margin: 20px auto;
+            margin: 20px auto; /* Centraliza os produtos */
             padding: 15px;
             border-radius: 10px;
             background-color: #111;
-            max-width: 300px;
+            max-width: 300px; /* Limita a largura */
         }
         .product img {
-            width: 100%;
-            max-width: 250px;
+            width: 100%; /* Imagem ocupa toda a largura disponível */
+            max-width: 250px; /* Limita o tamanho da imagem */
             height: auto;
             border-radius: 10px;
         }
@@ -85,7 +74,7 @@
             background-color: #222;
             border-radius: 10px;
             max-width: 300px;
-            margin: 30px auto;
+            margin: 30px auto; /* Centraliza o carrinho */
         }
         #carrinho-container ul {
             list-style: none;
@@ -117,8 +106,6 @@
             background-color: #222;
             padding: 10px;
             margin-top: 20px;
-            width: 100%;
-            max-width: 1200px;
         }
         footer p {
             color: #aaa;
@@ -132,6 +119,7 @@
         <p>A prata que fala por você!</p>
     </header>
     <nav>
+        <a href="#">Império TH</a>
         <a href="#">Home</a>
         <a href="#">Produtos</a>
         <a href="#">Contato</a>
