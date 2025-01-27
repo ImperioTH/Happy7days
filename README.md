@@ -20,15 +20,15 @@
             justify-content: center;
             align-items: center;
             background-color: #1e1e1e;
-            padding: 10px;
+            padding: 15px 0;
         }
         header img {
-            max-height: 70px;
-            cursor: pointer;
+            max-height: 100px;
         }
         nav {
             background-color: #34495e;
-            text-align: center;
+            display: flex;
+            justify-content: center;
             padding: 10px 0;
         }
         nav a {
@@ -45,10 +45,17 @@
             padding: 20px;
             text-align: center;
         }
+        .container h1 {
+            margin-bottom: 20px;
+        }
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
         .product {
-            display: inline-block;
             border: 1px solid #7f8c8d;
-            margin: 10px;
             padding: 15px;
             border-radius: 10px;
             background-color: #2c3e50;
@@ -82,7 +89,7 @@
 </head>
 <body>
     <header>
-        <img src="https://i.ibb.co/yFQ6F0n/logo-imperio.png" alt="Logo Império TH" onclick="location.reload();">
+        <img src="https://i.ibb.co/yFQ6F0n/logo-imperio.png" alt="Logo Império TH">
     </header>
     <nav>
         <a href="#">Home</a>
@@ -91,17 +98,19 @@
     </nav>
     <div class="container">
         <h1>Promoções Especiais</h1>
-        <div class="product">
-            <img src="https://via.placeholder.com/200" alt="Corrente Prata 925">
-            <h3>Corrente Prata 925</h3>
-            <p>R$ 149,90</p>
-            <button class="btn">Adicionar ao Carrinho</button>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/200" alt="Pulseira Prata 925">
-            <h3>Pulseira Prata 925</h3>
-            <p>R$ 79,90</p>
-            <button class="btn">Adicionar ao Carrinho</button>
+        <div class="products">
+            <div class="product">
+                <img src="https://via.placeholder.com/200" alt="Corrente Prata 925">
+                <h3>Corrente Prata 925</h3>
+                <p>R$ 149,90</p>
+                <button class="btn">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/200" alt="Pulseira Prata 925">
+                <h3>Pulseira Prata 925</h3>
+                <p>R$ 79,90</p>
+                <button class="btn">Adicionar ao Carrinho</button>
+            </div>
         </div>
     </div>
     <footer>
