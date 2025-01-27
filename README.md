@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Império TH - Loja de Pratas</title>
     <style>
+        /* Estilos do site */
         * {
             margin: 0;
             padding: 0;
@@ -85,7 +86,7 @@
             max-width: 350px;
         }
         #checkout-form {
-            display: none; /* Inicialmente escondido */
+            display: none;
             background-color: #1e1e1e;
             border-radius: 10px;
             padding: 20px;
@@ -98,6 +99,10 @@
             margin: 10px 0;
             border: 1px solid #34495e;
             border-radius: 5px;
+        }
+        #checkout-form h3 {
+            margin-top: 15px;
+            color: #f39c12;
         }
         .btn-submit {
             width: 100%;
@@ -131,18 +136,6 @@
             <p>R$ 149,90</p>
             <button class="btn" onclick="adicionarAoCarrinho('Corrente Prata 925', 149.90)">Adicionar ao Carrinho</button>
         </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/200" alt="Produto 2">
-            <h3>Anel Prata 925</h3>
-            <p>R$ 199,90</p>
-            <button class="btn" onclick="adicionarAoCarrinho('Anel Prata 925', 199.90)">Adicionar ao Carrinho</button>
-        </div>
-        <div class="product">
-            <img src="https://via.placeholder.com/200" alt="Produto 3">
-            <h3>Brinco Prata 925</h3>
-            <p>R$ 129,90</p>
-            <button class="btn" onclick="adicionarAoCarrinho('Brinco Prata 925', 129.90)">Adicionar ao Carrinho</button>
-        </div>
         <div id="carrinho-container" class="container">
             <h2>Seu Carrinho</h2>
             <ul id="carrinho-itens"></ul>
@@ -152,11 +145,16 @@
         </div>
         <div id="checkout-form">
             <h2>Dados do Cliente</h2>
+            <h3>Dados Pessoais</h3>
             <input type="text" id="nome" placeholder="Nome completo">
             <input type="email" id="email" placeholder="E-mail">
             <input type="text" id="telefone" placeholder="Telefone">
-            <input type="text" id="endereco" placeholder="Endereço completo">
-            <input type="text" id="complemento" placeholder="Complemento">
+
+            <h3>Endereço</h3>
+            <input type="text" id="rua" placeholder="Rua">
+            <input type="text" id="numero" placeholder="Número">
+            <input type="text" id="bairro" placeholder="Bairro">
+            <input type="text" id="complemento" placeholder="Complemento (opcional)">
             <input type="text" id="cep" placeholder="CEP">
             <button class="btn-submit" onclick="confirmarPedido()">Confirmar Pedido</button>
         </div>
@@ -198,16 +196,18 @@
             const nome = document.getElementById('nome').value;
             const email = document.getElementById('email').value;
             const telefone = document.getElementById('telefone').value;
-            const endereco = document.getElementById('endereco').value;
+            const rua = document.getElementById('rua').value;
+            const numero = document.getElementById('numero').value;
+            const bairro = document.getElementById('bairro').value;
             const complemento = document.getElementById('complemento').value;
             const cep = document.getElementById('cep').value;
 
-            if (nome && email && telefone && endereco && complemento && cep) {
+            if (nome && email && telefone && rua && numero && bairro && cep) {
                 alert(`Obrigado, ${nome}! Seu pedido foi confirmado.`);
                 document.getElementById('checkout-form').style.display = 'none';
                 limparCarrinho();
             } else {
-                alert('Por favor, preencha todos os campos!');
+                alert('Por favor, preencha todos os campos obrigatórios!');
             }
         }
 
