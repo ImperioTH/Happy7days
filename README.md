@@ -85,7 +85,7 @@
             max-width: 350px;
         }
         #checkout-form {
-            display: none; /* Inicialmente escondido */
+            display: none;
             background-color: #1e1e1e;
             border-radius: 10px;
             padding: 20px;
@@ -125,13 +125,20 @@
     </nav>
     <div class="container">
         <h2>Promoções Especiais</h2>
+        <!-- Produtos -->
         <div class="product">
             <img src="https://via.placeholder.com/200" alt="Produto 1">
             <h3>Corrente Prata 925</h3>
             <p>R$ 149,90</p>
             <button class="btn" onclick="adicionarAoCarrinho('Corrente Prata 925', 149.90)">Adicionar ao Carrinho</button>
         </div>
-        <div id="carrinho-container" class="container">
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produto 2">
+            <h3>Pulseira Prata 925</h3>
+            <p>R$ 99,90</p>
+            <button class="btn" onclick="adicionarAoCarrinho('Pulseira Prata 925', 99.90)">Adicionar ao Carrinho</button>
+        </div>
+        <div id="carrinho-container">
             <h2>Seu Carrinho</h2>
             <ul id="carrinho-itens"></ul>
             <p id="total-carrinho">Total: R$ 0,00</p>
@@ -169,7 +176,7 @@
             const totalCarrinho = document.getElementById('total-carrinho');
             carrinhoItens.innerHTML = '';
             let total = 0;
-            carrinho.forEach((produto, index) => {
+            carrinho.forEach((produto) => {
                 carrinhoItens.innerHTML += `<li>${produto.nome} - R$ ${produto.preco.toFixed(2)}</li>`;
                 total += produto.preco;
             });
