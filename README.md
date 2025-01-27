@@ -16,26 +16,24 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
             text-align: center;
         }
-        header, nav, footer {
-            width: 100%;
-            max-width: 1200px;
-        }
         header {
-            background-color: #1e1e1e;
+            width: 100%;
             padding: 20px;
+            background-color: #1e1e1e;
         }
         header img {
-            height: 60px;
+            max-width: 150px;
             cursor: pointer;
         }
         header p {
+            margin-top: 10px;
             color: #bdc3c7;
             font-size: 1.2rem;
         }
         nav {
+            width: 100%;
             background-color: #34495e;
             padding: 15px;
         }
@@ -51,7 +49,6 @@
         }
         .container {
             padding: 20px;
-            width: 100%;
             max-width: 1200px;
         }
         .product {
@@ -78,19 +75,11 @@
         .btn:hover {
             background-color: #e67e22;
         }
-        #carrinho-container {
+        #carrinho-container, #checkout-form {
             background-color: #1e1e1e;
             border-radius: 10px;
             padding: 20px;
             max-width: 350px;
-        }
-        #checkout-form {
-            display: none;
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 350px;
-            margin-top: 20px;
         }
         #checkout-form input {
             width: 100%;
@@ -115,7 +104,7 @@
 </head>
 <body>
     <header>
-        <img src="https://i.ibb.co/frSG2H8" alt="Logo Império TH" onclick="recarregarPagina()">
+        <img src="https://i.ibb.co/YPVm0fz/frSG2H8.jpg" alt="Logo Império TH" onclick="recarregarPagina()">
         <p>O IMPÉRIO DAS PRATAS!</p>
     </header>
     <nav>
@@ -125,27 +114,26 @@
     </nav>
     <div class="container">
         <h2>Promoções Especiais</h2>
-        <!-- Produtos -->
         <div class="product">
-            <img src="https://via.placeholder.com/200" alt="Produto 1">
+            <img src="https://via.placeholder.com/200" alt="Corrente Prata 925">
             <h3>Corrente Prata 925</h3>
             <p>R$ 149,90</p>
             <button class="btn" onclick="adicionarAoCarrinho('Corrente Prata 925', 149.90)">Adicionar ao Carrinho</button>
         </div>
         <div class="product">
-            <img src="https://via.placeholder.com/200" alt="Produto 2">
+            <img src="https://via.placeholder.com/200" alt="Pulseira Prata 925">
             <h3>Pulseira Prata 925</h3>
-            <p>R$ 99,90</p>
-            <button class="btn" onclick="adicionarAoCarrinho('Pulseira Prata 925', 99.90)">Adicionar ao Carrinho</button>
+            <p>R$ 79,90</p>
+            <button class="btn" onclick="adicionarAoCarrinho('Pulseira Prata 925', 79.90)">Adicionar ao Carrinho</button>
         </div>
-        <div id="carrinho-container">
+        <div id="carrinho-container" class="container">
             <h2>Seu Carrinho</h2>
             <ul id="carrinho-itens"></ul>
             <p id="total-carrinho">Total: R$ 0,00</p>
             <button class="btn" onclick="mostrarCheckout()">Finalizar Compra</button>
             <button class="btn" onclick="limparCarrinho()">Limpar Carrinho</button>
         </div>
-        <div id="checkout-form">
+        <div id="checkout-form" style="display: none;">
             <h2>Dados do Cliente</h2>
             <input type="text" id="nome" placeholder="Nome completo">
             <input type="email" id="email" placeholder="E-mail">
@@ -164,29 +152,34 @@
         function recarregarPagina() {
             location.reload();
         }
+
         let carrinho = [];
+
         function adicionarAoCarrinho(nome, preco) {
             const produto = { nome, preco };
             carrinho.push(produto);
             atualizarCarrinho();
             alert(`${nome} foi adicionado ao carrinho!`);
         }
+
         function atualizarCarrinho() {
             const carrinhoItens = document.getElementById('carrinho-itens');
             const totalCarrinho = document.getElementById('total-carrinho');
             carrinhoItens.innerHTML = '';
             let total = 0;
-            carrinho.forEach((produto) => {
+
+            carrinho.forEach(produto => {
                 carrinhoItens.innerHTML += `<li>${produto.nome} - R$ ${produto.preco.toFixed(2)}</li>`;
                 total += produto.preco;
             });
+
             totalCarrinho.innerText = `Total: R$ ${total.toFixed(2)}`;
         }
+
         function mostrarCheckout() {
-            const checkoutForm = document.getElementById('checkout-form');
-            checkoutForm.style.display = 'block';
-            checkoutForm.scrollIntoView({ behavior: "smooth" });
+            document.getElementById('checkout-form').style.display = 'block';
         }
+
         function confirmarPedido() {
             const nome = document.getElementById('nome').value;
             const email = document.getElementById('email').value;
@@ -195,6 +188,7 @@
             const numero = document.getElementById('numero').value;
             const bairro = document.getElementById('bairro').value;
             const cep = document.getElementById('cep').value;
+
             if (nome && email && telefone && rua && numero && bairro && cep) {
                 alert(`Obrigado, ${nome}! Seu pedido foi confirmado.`);
                 document.getElementById('checkout-form').style.display = 'none';
@@ -203,6 +197,7 @@
                 alert('Por favor, preencha todos os campos!');
             }
         }
+
         function limparCarrinho() {
             carrinho = [];
             atualizarCarrinho();
