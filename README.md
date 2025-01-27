@@ -144,6 +144,8 @@
             <input type="email" id="email" placeholder="E-mail">
             <input type="text" id="telefone" placeholder="Telefone">
             <input type="text" id="endereco" placeholder="Endereço completo">
+            <input type="text" id="complemento" placeholder="Complemento">
+            <input type="text" id="cep" placeholder="CEP">
             <button class="btn-submit" onclick="confirmarPedido()">Confirmar Pedido</button>
         </div>
     </div>
@@ -177,6 +179,7 @@
         function mostrarCheckout() {
             const checkoutForm = document.getElementById('checkout-form');
             checkoutForm.style.display = 'block';
+            window.scrollTo({ top: checkoutForm.offsetTop, behavior: 'smooth' });
         }
 
         function confirmarPedido() {
@@ -184,8 +187,10 @@
             const email = document.getElementById('email').value;
             const telefone = document.getElementById('telefone').value;
             const endereco = document.getElementById('endereco').value;
+            const complemento = document.getElementById('complemento').value;
+            const cep = document.getElementById('cep').value;
 
-            if (nome && email && telefone && endereco) {
+            if (nome && email && telefone && endereco && complemento && cep) {
                 alert(`Obrigado, ${nome}! Seu pedido foi confirmado.`);
                 document.getElementById('checkout-form').style.display = 'none';
                 limparCarrinho();
