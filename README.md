@@ -131,6 +131,18 @@
             <p>R$ 149,90</p>
             <button class="btn" onclick="adicionarAoCarrinho('Corrente Prata 925', 149.90)">Adicionar ao Carrinho</button>
         </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produto 2">
+            <h3>Anel Prata 925</h3>
+            <p>R$ 199,90</p>
+            <button class="btn" onclick="adicionarAoCarrinho('Anel Prata 925', 199.90)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200" alt="Produto 3">
+            <h3>Brinco Prata 925</h3>
+            <p>R$ 129,90</p>
+            <button class="btn" onclick="adicionarAoCarrinho('Brinco Prata 925', 129.90)">Adicionar ao Carrinho</button>
+        </div>
         <div id="carrinho-container" class="container">
             <h2>Seu Carrinho</h2>
             <ul id="carrinho-itens"></ul>
