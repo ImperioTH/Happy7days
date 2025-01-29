@@ -133,8 +133,8 @@
     <header>
         <!-- Aqui está sua logo -->
         <img src="https://i.postimg.cc/3N0Njn3m/20250114-025227-0000.png" alt="Logo Império TH">
-        <h1>Bem-vindo ao Império TH</h1>
-        <p>O IMPÉRIO DAS PRATAS!</p>
+        <h1>Seja Bem-Vindo TH</h1>
+        <p>Ao Nosso Império!</p>
     </header>
     <nav>
         <a href="#">Home</a>
