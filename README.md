@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Império TH - Loja de Pratas</title>
+    <title> - Loja de Pratas</title>
     <style>
         /* Estilos do site */
         * {
@@ -133,8 +133,8 @@
     <header>
         <!-- Aqui está sua logo -->
         <img src="https://i.postimg.cc/3N0Njn3m/20250114-025227-0000.png" alt="Logo Império TH">
-        <h1>Seja Bem-Vindo TH</h1>
-        <p>Ao Nosso Império!</p>
+        <h1>SEJA BEM-VINDO</h1>
+        <p>AO NOSSO IMPÉRIO!</p>
     </header>
     <nav>
         <a href="#">Home</a>
