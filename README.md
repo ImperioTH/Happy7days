@@ -29,7 +29,7 @@
             padding: 20px;
         }
         header img {
-            width: 150px;
+            width: 300px;
             display: block;
             margin: 0 auto 10px;
         }
