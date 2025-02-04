@@ -4,7 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Império TH - Loja de Pratas</title>
     <style>
-        /* Estilos anteriores mantidos */
         * {
             margin: 0;
             padding: 0;
@@ -139,7 +138,42 @@
             border-radius: 8px;
         }
         
-        /* Mantidos outros estilos existentes (carrinho, botões, etc) */
+        /* Estilos do carrinho mantidos */
+        #carrinho-container {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 350px;
+            margin: 40px auto;
+        }
+        
+        #checkout-form {
+            display: none;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 350px;
+            margin: 20px auto;
+        }
+        
+        #checkout-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #34495e;
+            border-radius: 5px;
+        }
+        
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background-color: #27ae60;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
         .btn {
             margin-top: 10px;
             padding: 12px;
@@ -149,14 +183,6 @@
             cursor: pointer;
             border-radius: 5px;
             width: 100%;
-        }
-        
-        #carrinho-container {
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 350px;
-            margin: 40px auto;
         }
         
         html {
@@ -259,7 +285,7 @@
             </div>
         </div>
 
-        <!-- Carrinho e Checkout (mantido igual) -->
+        <!-- Carrinho de Compras (MANTIDO DO CÓDIGO ORIGINAL) -->
         <div id="carrinho-container">
             <h2>Seu Carrinho</h2>
             <ul id="carrinho-itens"></ul>
@@ -267,9 +293,21 @@
             <button class="btn" onclick="mostrarCheckout()">Finalizar Compra</button>
             <button class="btn" onclick="limparCarrinho()">Limpar Carrinho</button>
         </div>
-        
+
+        <!-- Formulário de Checkout (MANTIDO DO CÓDIGO ORIGINAL) -->
         <div id="checkout-form">
-            <!-- Formulário mantido igual -->
+            <h2>Dados do Cliente</h2>
+            <h3>Dados Pessoais</h3>
+            <input type="text" id="nome" placeholder="Nome completo">
+            <input type="email" id="email" placeholder="E-mail">
+            <input type="text" id="telefone" placeholder="Telefone">
+            <h3>Endereço</h3>
+            <input type="text" id="rua" placeholder="Rua">
+            <input type="text" id="numero" placeholder="Número">
+            <input type="text" id="bairro" placeholder="Bairro">
+            <input type="text" id="complemento" placeholder="Complemento (opcional)">
+            <input type="text" id="cep" placeholder="CEP">
+            <button class="btn-submit" onclick="confirmarPedido()">Confirmar Pedido</button>
         </div>
     </div>
     <footer>
@@ -277,7 +315,7 @@
     </footer>
 
     <script>
-        // JavaScript mantido igual
+        // JavaScript COMPLETO do código original + melhorias
         let carrinho = [];
 
         function adicionarAoCarrinho(nome, preco) {
@@ -301,7 +339,36 @@
             totalCarrinho.innerText = `Total: R$ ${total.toFixed(2)}`;
         }
 
-        // Funções restantes mantidas iguais
+        function mostrarCheckout() {
+            const checkoutForm = document.getElementById('checkout-form');
+            checkoutForm.style.display = 'block';
+            window.scrollTo({ top: checkoutForm.offsetTop, behavior: 'smooth' });
+        }
+
+        function confirmarPedido() {
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('telefone').value;
+            const rua = document.getElementById('rua').value;
+            const numero = document.getElementById('numero').value;
+            const bairro = document.getElementById('bairro').value;
+            const complemento = document.getElementById('complemento').value;
+            const cep = document.getElementById('cep').value;
+
+            if (nome && email && telefone && rua && numero && bairro && cep) {
+                alert(`Obrigado, ${nome}! Seu pedido foi confirmado.`);
+                document.getElementById('checkout-form').style.display = 'none';
+                limparCarrinho();
+            } else {
+                alert('Por favor, preencha todos os campos obrigatórios!');
+            }
+        }
+
+        function limparCarrinho() {
+            carrinho = [];
+            atualizarCarrinho();
+            alert("Carrinho limpo com sucesso!");
+        }
     </script>
 </body>
 </html>
