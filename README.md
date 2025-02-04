@@ -218,7 +218,7 @@
             </a>
             
             <a href="#aneis" class="categoria-card">
-                <img src="https://i.postimg.cc/3N0Njn3m/20250114-025227-0000.png"alt="Anéis">
+                <img src="https://i.postimg.cc/3N0Njn3m/20250114-025227-0000.png">
                 <button class="categoria-btn">Anéis</button>
             </a>
             
