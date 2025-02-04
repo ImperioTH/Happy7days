@@ -2,9 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> - Loja de Pratas</title>
+    <title>Império TH - Loja de Pratas</title>
     <style>
-        /* Estilos do site */
         * {
             margin: 0;
             padding: 0;
@@ -127,11 +126,57 @@
         .btn-submit:hover {
             background-color: #2ecc71;
         }
+
+        /* Dropdown Personalizado */
+        .dropdown-promocoes {
+            position: relative;
+            display: inline-block;
+            margin: 20px 0;
+        }
+        .dropdown-btn {
+            background-color: #34495e;
+            color: #ecf0f1;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
+        }
+        .dropdown-btn:hover {
+            background-color: #2c3e50;
+        }
+        .dropdown-conteudo {
+            display: none;
+            position: absolute;
+            background-color: #2c3e50;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .dropdown-conteudo a {
+            color: #ecf0f1;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        .dropdown-conteudo a:hover {
+            background-color: #34495e;
+            color: #f39c12;
+        }
+        .dropdown-promocoes.active .dropdown-conteudo {
+            display: block;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body>
     <header>
-        <!-- Aqui está sua logo -->
         <img src="https://i.postimg.cc/3N0Njn3m/20250114-025227-0000.png" alt="Logo Império TH">
         <h1>SEJA BEM-VINDO</h1>
         <p>AO NOSSO IMPÉRIO!</p>
@@ -143,26 +188,38 @@
     </nav>
     <div class="container">
         <h2>Promoções Especiais</h2>
+        
+        <!-- Dropdown de Categorias -->
+        <div class="dropdown-promocoes">
+            <button class="dropdown-btn">Categorias ▼</button>
+            <div class="dropdown-conteudo">
+                <a href="#correntes">Correntes</a>
+                <a href="#aneis">Anéis</a>
+                <a href="#brincos">Brincos</a>
+            </div>
+        </div>
+
         <div class="products-container">
-            <div class="product">
+            <div class="product" id="correntes">
                 <img src="https://via.placeholder.com/200" alt="Produto 1">
                 <h3>Corrente Prata 925</h3>
                 <p>R$ 149,90</p>
                 <button class="btn" onclick="adicionarAoCarrinho('Corrente Prata 925', 149.90)">Adicionar ao Carrinho</button>
             </div>
-            <div class="product">
+            <div class="product" id="aneis">
                 <img src="https://via.placeholder.com/200" alt="Produto 2">
-                <h3>Pulseira Masculina</h3>
+                <h3>Anel de Prata</h3>
                 <p>R$ 89,90</p>
-                <button class="btn" onclick="adicionarAoCarrinho('Pulseira Masculina', 89.90)">Adicionar ao Carrinho</button>
+                <button class="btn" onclick="adicionarAoCarrinho('Anel de Prata', 89.90)">Adicionar ao Carrinho</button>
             </div>
-            <div class="product">
+            <div class="product" id="brincos">
                 <img src="https://via.placeholder.com/200" alt="Produto 3">
                 <h3>Brinco de Prata</h3>
                 <p>R$ 59,90</p>
                 <button class="btn" onclick="adicionarAoCarrinho('Brinco de Prata', 59.90)">Adicionar ao Carrinho</button>
             </div>
         </div>
+
         <div id="carrinho-container">
             <h2>Seu Carrinho</h2>
             <ul id="carrinho-itens"></ul>
@@ -188,7 +245,27 @@
     <footer>
         <p>Império TH &copy; 2025 - Todos os direitos reservados.</p>
     </footer>
+
     <script>
+        // Controle do Dropdown
+        document.querySelector('.dropdown-btn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.parentElement.classList.toggle('active');
+        });
+
+        window.addEventListener('click', function(e) {
+            if (!e.target.matches('.dropdown-btn')) {
+                document.querySelectorAll('.dropdown-promocoes').forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+
+        window.addEventListener('scroll', function() {
+            document.querySelector('.dropdown-promocoes').classList.remove('active');
+        });
+
+        // Carrinho de Compras
         let carrinho = [];
 
         function adicionarAoCarrinho(nome, preco) {
