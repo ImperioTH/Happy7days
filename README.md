@@ -208,7 +208,7 @@
         <a href="#">Contato</a>
     </nav>
     <div class="container">
-        <h2>Promoções Especiais</h2>
+        <h2>Pratas</h2>
         
         <!-- Cards de Categorias -->
         <div class="categorias-container">
@@ -218,7 +218,7 @@
             </a>
             
             <a href="#aneis" class="categoria-card">
-                <img src="https://via.placeholder.com/400x250/2c3e50/fff?text=Anéis+Exclusivos" alt="Anéis">
+                <img src="https://i.postimg.cc/3N0Njn3m/20250114-025227-0000.png"alt="Anéis">
                 <button class="categoria-btn">Anéis</button>
             </a>
             
