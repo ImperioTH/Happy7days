@@ -77,7 +77,7 @@
         
         .categoria-card img {
             width: 100%;
-            height: 250px;
+            height: 100px;
             object-fit: cover;
             filter: brightness(0.7);
         }
