@@ -223,7 +223,7 @@
             </a>
             
             <a href="#brincos" class="categoria-card">
-                <img src="https://via.placeholder.com/400x250/2c3e50/fff?text=Brincos+Modernos" alt="Brincos">
+                <img https://via.placeholder.com/400x250/2c3e50/fff?text=Brincos+Modernossrc="https://via.placeholder.com/400x250/2c3e50/fff?text=Brincos+Modernos" alt="Brincos">
                 <button class="categoria-btn">Brincos</button>
             </a>
         </div>
