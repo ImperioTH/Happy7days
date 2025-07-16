@@ -213,7 +213,7 @@
         <!-- Cards de Categorias -->
         <div class="categorias-container">
             <a href="#correntes" class="categoria-card">
-                <img src="https://via.placeholder.com/400x250/2c3e50/fff?text=Correntes+em+Prata" alt="Correntes">
+                
                 <button class="categoria-btn">Correntes</button>
             </a>
             
