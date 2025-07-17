@@ -2,8 +2,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Império TH - Loja de Pratas</title>
+    <title> - Loja de Pratas</title>
     <style>
+        /* Estilos do site */
         * {
             margin: 0;
             padding: 0;
@@ -59,103 +60,50 @@
             width: 100%;
             max-width: 1200px;
         }
-        
-        /* Novos estilos para cards de categoria */
-        .categorias-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+        .products-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 20px;
-            margin: 30px 0;
         }
-        
-        .categoria-card {
-            position: relative;
+        .product {
+            border: 1px solid #7f8c8d;
+            margin: 20px auto;
+            padding: 15px;
             border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s;
+            background-color: #2c3e50;
+            max-width: 320px;
         }
-        
-        .categoria-card img {
+        .product img {
             width: 100%;
-            height: 100px;
-            object-fit: cover;
-            filter: brightness(0.7);
+            border-radius: 10px;
         }
-        
-        .categoria-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .categoria-btn {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 12px 30px;
+        .btn {
+            margin-top: 10px;
+            padding: 12px;
             background-color: #f39c12;
             color: #fff;
             border: none;
-            border-radius: 25px;
             cursor: pointer;
-            font-size: 1.2rem;
-            text-decoration: none;
-            transition: background-color 0.3s;
+            border-radius: 5px;
         }
-        
-        .categoria-btn:hover {
+        .btn:hover {
             background-color: #e67e22;
         }
-        
-        .product-categoria {
-            margin: 40px 0;
-            padding: 20px;
-            background-color: #1a1a1a;
-            border-radius: 10px;
-        }
-        
-        .products-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 20px;
-        }
-        
-        .product {
-            background-color: #2c3e50;
-            border-radius: 10px;
-            padding: 15px;
-            transition: transform 0.3s;
-        }
-        
-        .product:hover {
-            transform: translateY(-5px);
-        }
-        
-        .product img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-        
-        /* Estilos do carrinho mantidos */
         #carrinho-container {
             background-color: #1e1e1e;
             border-radius: 10px;
             padding: 20px;
             max-width: 350px;
-            margin: 40px auto;
         }
-        
         #checkout-form {
             display: none;
             background-color: #1e1e1e;
             border-radius: 10px;
             padding: 20px;
             max-width: 350px;
-            margin: 20px auto;
+            margin-top: 20px;
         }
-        
         #checkout-form input {
             width: 100%;
             padding: 10px;
@@ -163,7 +111,10 @@
             border: 1px solid #34495e;
             border-radius: 5px;
         }
-        
+        #checkout-form h3 {
+            margin-top: 15px;
+            color: #f39c12;
+        }
         .btn-submit {
             width: 100%;
             padding: 12px;
@@ -173,31 +124,14 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        
-        .btn {
-            margin-top: 10px;
-            padding: 12px;
-            background-color: #f39c12;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            width: 100%;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        @media (max-width: 768px) {
-            .categorias-container {
-                grid-template-columns: 1fr;
-            }
+        .btn-submit:hover {
+            background-color: #2ecc71;
         }
     </style>
 </head>
 <body>
     <header>
+        <!-- Aqui está sua logo -->
         <img src="https://i.postimg.cc/3N0Njn3m/20250114-025227-0000.png" alt="Logo Império TH">
         <h1>SEJA BEM-VINDO</h1>
         <p>AO NOSSO IMPÉRIO!</p>
@@ -208,82 +142,27 @@
         <a href="#">Contato</a>
     </nav>
     <div class="container">
-        <h2>Pratas</h2>
-        
-        <!-- Cards de Categorias -->
-        <div class="categorias-container">
-            <a href="#correntes" class="categoria-card">
-                
-                <button class="categoria-btn">Correntes</button>
-            </a>
-            
-            <a href="#aneis" class="categoria-card">
-                <img src="">
-                <button class="categoria-btn">Anéis</button>
-            </a>
-            
-            <a href="#brincos" class="categoria-btn">Brincos</button>
-            </a>
-        </div>
-
-        <!-- Seção Correntes -->
-        <div class="product-categoria" id="correntes">
-            <h3>Correntes em Prata 925</h3>
-            <div class="products-container">
-                <div class="product">
-                    <img src="https://via.placeholder.com/300x200/34495e/fff?text=Corrente+Fina" alt="Corrente Fina">
-                    <h4>Corrente Prata Fina</h4>
-                    <p>R$ 129,90</p>
-                    <button class="btn" onclick="adicionarAoCarrinho('Corrente Fina', 129.90)">Comprar</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/300x200/34495e/fff?text=Corrente+Grossa" alt="Corrente Grossa">
-                    <h4>Corrente Prata Grossa</h4>
-                    <p>R$ 179,90</p>
-                    <button class="btn" onclick="adicionarAoCarrinho('Corrente Grossa', 179.90)">Comprar</button>
-                </div>
+        <h2>Promoções Especiais</h2>
+        <div class="products-container">
+            <div class="product">
+                <img src="https://via.placeholder.com/200" alt="Produto 1">
+                <h3>Corrente Prata 925</h3>
+                <p>R$ 149,90</p>
+                <button class="btn" onclick="adicionarAoCarrinho('Corrente Prata 925', 149.90)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/200" alt="Produto 2">
+                <h3>Pulseira Masculina</h3>
+                <p>R$ 89,90</p>
+                <button class="btn" onclick="adicionarAoCarrinho('Pulseira Masculina', 89.90)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/200" alt="Produto 3">
+                <h3>Brinco de Prata</h3>
+                <p>R$ 59,90</p>
+                <button class="btn" onclick="adicionarAoCarrinho('Brinco de Prata', 59.90)">Adicionar ao Carrinho</button>
             </div>
         </div>
-
-        <!-- Seção Anéis -->
-        <div class="product-categoria" id="aneis">
-            <h3>Anéis em Prata 925</h3>
-            <div class="products-container">
-                <div class="product">
-                    <img src="https://via.placeholder.com/300x200/34495e/fff?text=Anel+Simples" alt="Anel Simples">
-                    <h4>Anel Prata Simples</h4>
-                    <p>R$ 89,90</p>
-                    <button class="btn" onclick="adicionarAoCarrinho('Anel Simples', 89.90)">Comprar</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/300x200/34495e/fff?text=Anel+Pedra" alt="Anel com Pedra">
-                    <h4>Anel com Pedra</h4>
-                    <p>R$ 149,90</p>
-                    <button class="btn" onclick="adicionarAoCarrinho('Anel com Pedra', 149.90)">Comprar</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Seção Brincos -->
-        <div class="product-categoria" id="brincos">
-            <h3>Brincos em Prata 925</h3>
-            <div class="products-container">
-                <div class="product">
-                    <img src="https://via.placeholder.com/300x200/34495e/fff?text=Brinco+Bolinha" alt="Brinco Bolinha">
-                    <h4>Brinco Bolinha Prata</h4>
-                    <p>R$ 69,90</p>
-                    <button class="btn" onclick="adicionarAoCarrinho('Brinco Bolinha', 69.90)">Comprar</button>
-                </div>
-                <div class="product">
-                    <img src="https://via.placeholder.com/300x200/34495e/fff?text=Brinco+Argola" alt="Brinco Argola">
-                    <h4>Brinco Argola Grande</h4>
-                    <p>R$ 99,90</p>
-                    <button class="btn" onclick="adicionarAoCarrinho('Brinco Argola', 99.90)">Comprar</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Carrinho de Compras (MANTIDO DO CÓDIGO ORIGINAL) -->
         <div id="carrinho-container">
             <h2>Seu Carrinho</h2>
             <ul id="carrinho-itens"></ul>
@@ -291,8 +170,6 @@
             <button class="btn" onclick="mostrarCheckout()">Finalizar Compra</button>
             <button class="btn" onclick="limparCarrinho()">Limpar Carrinho</button>
         </div>
-
-        <!-- Formulário de Checkout (MANTIDO DO CÓDIGO ORIGINAL) -->
         <div id="checkout-form">
             <h2>Dados do Cliente</h2>
             <h3>Dados Pessoais</h3>
@@ -311,9 +188,7 @@
     <footer>
         <p>Império TH &copy; 2025 - Todos os direitos reservados.</p>
     </footer>
-
     <script>
-        // JavaScript COMPLETO do código original + melhorias
         let carrinho = [];
 
         function adicionarAoCarrinho(nome, preco) {
@@ -365,7 +240,6 @@
         function limparCarrinho() {
             carrinho = [];
             atualizarCarrinho();
-            alert("Carrinho limpo com sucesso!");
         }
     </script>
 </body>
