@@ -146,7 +146,7 @@
         <div class="products-container">
             <div class="product">
                 <img src="https://via.placeholder.com/200" alt="Produto 1">
-                <h3>Corrente Prata 925</h3>
+                <h3>Livro 48 Leis De Um Rei</h3>
                 <p>R$ 149,90</p>
                 <button class="btn" onclick="adicionarAoCarrinho('Corrente Prata 925', 149.90)">Adicionar ao Carrinho</button>
             </div>
