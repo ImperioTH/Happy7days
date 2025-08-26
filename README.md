@@ -110,21 +110,20 @@
             border-top: 2px solid #ff9999;
         }
         
-        .photo-placeholder {
-            width: 250px;
-            height: 250px;
+        .photo-container {
+            width: 280px;
+            height: 280px;
             margin: 15px auto;
-            background-color: #ffe6e6;
-            border: 3px dashed #ff9999;
+            border: 3px solid #ff9999;
             border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #cc0066;
-            font-weight: bold;
-            font-size: 0.9rem;
-            text-align: center;
-            padding: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .our-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         footer {
@@ -180,9 +179,9 @@
                 font-size: 1.5rem;
             }
             
-            .photo-placeholder {
-                width: 200px;
-                height: 200px;
+            .photo-container {
+                width: 220px;
+                height: 220px;
             }
             
             h2 {
@@ -200,9 +199,9 @@
                 font-size: 1.3rem;
             }
             
-            .photo-placeholder {
-                width: 180px;
-                height: 180px;
+            .photo-container {
+                width: 200px;
+                height: 200px;
             }
         }
         
@@ -229,6 +228,12 @@
         
         .back-to-top.show {
             opacity: 1;
+        }
+        
+        .photo-caption {
+            margin-top: 10px;
+            font-style: italic;
+            color: #cc0066;
         }
     </style>
 </head>
@@ -280,10 +285,10 @@
         
         <div class="photo-section">
             <h2>Nossa Foto Especial</h2>
-            <div class="photo-placeholder">
-                Coloque nossa foto aqui
+            <div class="photo-container">
+                <img src="https://i.ibb.co/6n60L9P/IMG-20241006-211136-862.jpg" alt="Nossa foto especial" class="our-photo">
             </div>
-            <p>Este momento especial merece ser lembrado para sempre</p>
+            <p class="photo-caption">Este momento especial merece ser lembrado para sempre</p>
         </div>
         
         <footer>
@@ -337,6 +342,10 @@
         window.onload = function() {
             createHearts();
             setupBackToTop();
+            
+            // Garantir que a imagem seja carregada
+            const img = new Image();
+            img.src = "https://i.ibb.co/6n60L9P/IMG-20241006-211136-862.jpg";
         };
     </script>
 </body>
